@@ -7,8 +7,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addItem, clearItems } from '../../store/actions/index'
 import ItemsTable from '../../components/ItemsTable/ItemsTable'
 import { v4 as uuidv4 } from 'uuid';
-import { dateToObject, formatDateToInitialValues } from '../../helpers/helpers';
+import { dateToObject, formatDateToInitialValues,checkDatesValidity } from '../../helpers/helpers';
 import './Report.scss'
+import Loader from '../../components/UI/Loader/Loader';
 const validationSchema = Yup.object({
     concept: Yup.string().required(),
     dateFrom: Yup.date().required(),
@@ -84,21 +85,35 @@ const Report = (props) =>{
     }
 
 
+    const confirmationAlert = () =>{
+        const answ = window.confirm('¿Seguro que deseas eliminar este reporte?')
+        if(answ){
+            deleteReport()
+        }
+    }
+
     useEffect(()=>{
         dispatch(clearItems())
         fetchReport()
     },[ID])
 
-
-    return(
-        <div className='reportRegister'>
+    switch(status){
+        case 'LOADING':
+            return(
+                <Loader/>
+            )
+        case 'SUCCESS':
+            return(
+                <div className='reportRegister'>
         <h1 className='reportRegister__title'>{`REPORTE DE GASTO #${report._id}`}</h1>
         <Formik
             initialValues={report}
             enableReinitialize={true}
             validationSchema={validationSchema}
             onSubmit={(values) =>{
-                updateReport(values)
+                if(checkDatesValidity(values.dateFrom,values.dateTo,items)){
+                    updateReport(values); 
+                }  
             }}
         >
             {({dirty, isValid, values,errors}) =>(
@@ -180,15 +195,25 @@ const Report = (props) =>{
                         <Field className ='input input__report input__report--medium'type='text' name='createdBy' id='createdBy' disabled/>
                     </div> 
                     <div>
-                        <button type='submit' className='button--normal' disabled={!dirty || !isValid}>Actualizar</button>
-                        <button type='button' className='button--normal reportRegister__addButton' onClick={deleteReport}>Eliminar</button>
+                        <button type='submit' className='button--normal' disabled={!isValid}>Actualizar</button>
+                        <button type='button' className='button--normal reportRegister__addButton' onClick={confirmationAlert}>Eliminar</button>
                     </div>
                     
                 </Form>
             )}
         </Formik>
     </div>
-    )
+            )
+        case 'DELETED':
+            return(
+                <Redirect to='/reports/index'/>
+            )
+        case 'FAIL':
+        default:
+            return(
+                <div>Hubo un error intentalo más tarde</div>
+            )
+    }
 }
 
 export default withRouter(Report);

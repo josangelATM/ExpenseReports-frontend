@@ -7,13 +7,17 @@ import  { useDispatch, useSelector } from 'react-redux'
 import { addItem,clearItems } from '../../store/actions/index'
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid';
-import { dateToObject } from '../../helpers/helpers';
+import { checkDatesValidity, dateToObject } from '../../helpers/helpers';
 import Loader from '../UI/Loader/Loader';
 
 const validationSchema = Yup.object({
     concept: Yup.string().required(),
     dateFrom: Yup.date().required(),
     dateTo: Yup.date().required(),
+    date: Yup.date(),
+    accountName: Yup.string(),
+    description: Yup.string(),
+    totalItem: Yup.string(),
     employeeName: Yup.string().required(''),
     employeePosition: Yup.string().required(''),
     employeeDepartment: Yup.string().required(''),
@@ -26,6 +30,10 @@ const initialValues = {
     concept: '',
     dateFrom: '',
     dateTo: '',
+    date: '',
+    accountName: '',
+    description: '',
+    totalItem: '',
     employeeName: '',
     employeePosition: '',
     employeeDepartment: '',
@@ -84,7 +92,9 @@ const ReportRegister = () => {
                 initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={(values,{ resetForm }) =>{
-                    handleSubmit(values,resetForm);    
+                    if(checkDatesValidity(values.dateFrom,values.dateTo,items)){
+                        handleSubmit(values,resetForm); 
+                    }  
                 }}
             >
                 {({dirty, isValid, values,errors}) =>(
@@ -143,7 +153,7 @@ const ReportRegister = () => {
                                 </div> 
                                 <div className='reportRegister__input-container'>
                                     <label htmlFor='totalItem'>Total</label>
-                                    <Field className ='input input__report input__report--small'type='text' name='totalItem' id='totalItem'/>
+                                    <Field className ='input input__report input__report--small'type='number' name='totalItem' id='totalItem'/>
                                 </div> 
                             </div>
                             <button type={'button'} className='button--normal reportRegister__addButton' onClick={() => addItemRedux(values)} >Agregar</button>

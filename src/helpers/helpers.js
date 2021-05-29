@@ -26,3 +26,29 @@ export const dateToObject = (date) =>{
 export const objectDateToString = (date) =>{
     return(`${date.month}-${date.day}-${date.year}`)
 }
+
+export const checkDatesValidity = (dateFrom,dateTo,items)=>{
+    const newDateFrom = new Date(dateFrom)
+    const newDateTo = new Date(dateTo)
+    if(newDateFrom <= newDateTo){
+        const validity = items.every(item=>{
+            // console.log(newDateFrom)
+            // console.log(new Date(`${item.date.year}/${item.date.month}/${item.date.day-1} 19:00:00`))
+            // console.log(newDateTo)
+            return (newDateFrom <= new Date(`${item.date.year}/${item.date.month}/${item.date.day-1} 19:00:00`) && newDateTo >= new Date(`${item.date.year}/${item.date.month}/${item.date.day-1} 19:00:00`))
+    
+        }   
+        )
+        if(validity){
+            return(true)
+        }else{
+            alert('Algún gasto no está dentro de las fechas seleccionadas')
+            return(false)
+        }
+    }else{
+        alert('Fecha (desde) debe ser menor a fecha (hasta)')
+        return(false)
+    }
+
+}
+

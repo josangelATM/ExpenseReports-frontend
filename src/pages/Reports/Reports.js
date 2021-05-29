@@ -18,6 +18,8 @@ const Reports = () =>{
         })
     }
 
+    
+
     useEffect(() =>{
         fetchReports()
     },[])

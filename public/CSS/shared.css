@@ -43,4 +43,15 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 /*# sourceMappingURL=shared.css.map */

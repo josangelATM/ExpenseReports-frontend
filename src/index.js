@@ -8,7 +8,7 @@ import { createStore } from 'redux'
 import rootReducer from './store/reducers';
 import axios from 'axios'
 
-axios.defaults.baseURL= process.env.REACT_APP_API_URL;
+axios.defaults.baseURL=  process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_URL : 'http://localhost:5000/';
 
 const store =  process.env.NODE_ENV === 'production' ? createStore(rootReducer) : createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
