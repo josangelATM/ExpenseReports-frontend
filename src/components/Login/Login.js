@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { login } from '../../store/actions/index'
+import Loader from '../UI/Loader/Loader';
 const validationSchema = Yup.object({
     username: Yup.string().required(),
     password: Yup.string().required()
@@ -59,7 +60,7 @@ const Login = () => {
                 </div>
             )
         case 'LOADING': //Return the loader
-            return(<div></div>)
+            return(<Loader/>)
         case 'SUCCESS': //Redirect to reports
             return(
                 <Redirect to='/reports/index'/>
