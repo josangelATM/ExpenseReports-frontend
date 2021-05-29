@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,OAAO,CAAA;ECDH,OAAO,EAAE,IAAI;EACb,cAAc,EDCW,MAAM;EAC/B,WAAW,EAAE,MAAM;CAUtB;;AATI,AAAD,cAAQ,CAAA;EACJ,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,MAAM;CACrB;;AACA,AAAD,aAAO,CAAA;ECRP,OAAO,EAAE,IAAI;EACb,cAAc,EDQe,MAAM;EAC/B,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,MAAM;CACtB",
+    "sources": [
+        "Search.scss",
+        "../../../public/CSS/mixins.scss"
+    ],
+    "names": [],
+    "file": "Search.css"
+}

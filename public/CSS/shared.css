@@ -1,0 +1,46 @@
+.input {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 0.2rem solid #FEFEFA;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.input__report {
+  text-align: center;
+}
+
+.input__report--small {
+  width: 90%;
+}
+
+.input__report--medium {
+  width: 50%;
+}
+
+.button--normal {
+  background-color: #4FD9CA;
+  cursor: pointer;
+  border: 0.3rem solid #FEFEFA;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1.5rem;
+  color: #FEFEFA;
+  padding: 1rem 1rem;
+  font-size: 2rem;
+  margin: 2rem 2rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.button--normal:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/*# sourceMappingURL=shared.css.map */

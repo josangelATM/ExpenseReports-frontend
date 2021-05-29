@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,IAAI,CAAA;EACA,MAAM,EAAE,SAAS;CAQpB;;AAPI,AAAD,UAAO,CAAA;EACH,UAAU,EAAE,MAAM;CAErB;;AACA,AAAD,UAAO,CAAA;EACH,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "ItemRow.scss",
+        "../../../../public/CSS/globalVariables.scss"
+    ],
+    "names": [],
+    "file": "ItemRow.css"
+}

@@ -1,0 +1,12 @@
+.row {
+  margin: 2rem 2rem;
+}
+
+.row__data {
+  text-align: center;
+}
+
+.row__icon {
+  cursor: pointer;
+}
+/*# sourceMappingURL=ItemRow.css.map */

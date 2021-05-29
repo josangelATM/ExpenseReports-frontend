@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,YAAY,CAAA;EACR,cAAc,EAAE,IAAI;EACpB,MAAM,EAAE,MAAM,CAAC,KAAK,CCHZ,OAAO;EDIf,aAAa,EAAE,MAAM;CACxB",
+    "sources": [
+        "ItemsTable.scss",
+        "../../../public/CSS/globalVariables.scss"
+    ],
+    "names": [],
+    "file": "ItemsTable.css"
+}

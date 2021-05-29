@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,cAAc,CAAA;EACV,SAAS,EAAE,IAAI;EACf,cAAc,EAAE,SAAS;EACzB,cAAc,EAAE,IAAI;EACpB,MAAM,EAAE,MAAM,CAAC,KAAK,CCNZ,OAAO;EDOf,aAAa,EAAE,MAAM;CAExB",
+    "sources": [
+        "ReportsTable.scss",
+        "../../../public/CSS/globalVariables.scss"
+    ],
+    "names": [],
+    "file": "ReportsTable.css"
+}

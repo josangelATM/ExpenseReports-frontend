@@ -1,0 +1,134 @@
+.input {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 0.2rem solid #FEFEFA;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.input__report {
+  text-align: center;
+}
+
+.input__report--small {
+  width: 90%;
+}
+
+.input__report--medium {
+  width: 50%;
+}
+
+.button--normal {
+  background-color: #4FD9CA;
+  cursor: pointer;
+  border: 0.3rem solid #FEFEFA;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1.5rem;
+  color: #FEFEFA;
+  padding: 1rem 1rem;
+  font-size: 2rem;
+  margin: 2rem 2rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.button--normal:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reportRegister, .reportRegister__form, .reportRegister__input-container, .reportRegister__employee-subcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2.5rem;
+  width: 95%;
+  height: -webkit-fit-content .reportRegister __title;
+  height: -moz-fit-content .reportRegister __title;
+  height: fit-content .reportRegister __title;
+  height-font-size: 4rem;
+}
+
+.reportRegister__form {
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.reportRegister__upper-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.reportRegister__input-container {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.reportRegister__employee-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.reportRegister__expense-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.reportRegister__expense-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.reportRegister__addButton {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.title {
+  text-align: center;
+}
+/*# sourceMappingURL=ReportRegister.css.map */

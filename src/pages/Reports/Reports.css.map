@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,QAAQ,CAAA;ECDJ,OAAO,EAAE,IAAI;EACb,cAAc,EDCW,MAAM;CAOlC;;AANI,AAAD,eAAQ,CAAA;EACJ,SAAS,EAAC,IAAI;EACd,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,MAAM;CACjB",
+    "sources": [
+        "Reports.scss",
+        "../../../public/CSS/mixins.scss"
+    ],
+    "names": [],
+    "file": "Reports.css"
+}
