@@ -1,0 +1,15 @@
+@import '../../../public/CSS/mixins.scss';
+
+.search{
+    @include flex-properties(column);
+    align-items: center;
+    &__title{
+        font-size: 4rem;
+        text-align: center;
+    }
+    &__form{
+        @include flex-properties(column);
+        width: 50%;
+        align-items: center;
+    }
+}

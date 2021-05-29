@@ -1,0 +1,13 @@
+@import '../../../../public/CSS/globalVariables.scss';
+
+
+.row{
+    margin: 2rem 2rem;
+    &__data{
+        text-align: center;
+        
+    }
+    &__icon{
+        cursor: pointer;
+    }
+}

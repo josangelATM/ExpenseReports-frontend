@@ -1,0 +1,35 @@
+@import '../public/CSS/globalVariables.scss';
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik';
+}
+
+html{
+  font-size: 62.5%;
+  color: $textcolor;
+}
+
+a {
+  color: blue;
+  text-decoration: none; /* no underline */
+}
+
+.app{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  &__main{
+    background-color: $bgcolor;
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: inherit;
+  }
+}

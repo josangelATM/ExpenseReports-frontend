@@ -1,0 +1,37 @@
+@import './globalVariables.scss';
+
+.input{
+    height: fit-content;
+    border: 0.2rem solid $textcolor;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    width: 100%;
+    &__report{
+        text-align: center;
+        &--small{
+            width: 90%;
+        }
+        &--medium{
+            width: 50%;
+        }
+    }
+}
+
+.button--normal{
+    background-color: $bgcolor;
+    cursor: pointer;
+    border: 0.3rem solid $textcolor;
+    width: fit-content;
+    border-radius: 1.5rem;
+    color: $textcolor; 
+    padding: 1rem 1rem;
+    font-size: 2rem; 
+    margin: 2rem 2rem;
+    height: fit-content;
+    &:disabled{
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

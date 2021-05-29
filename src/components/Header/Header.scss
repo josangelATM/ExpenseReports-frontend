@@ -1,0 +1,50 @@
+@import '../../../public/CSS/globalVariables.scss';
+@import '../../../public/CSS/mixins.scss';
+.header{
+    @include flex-properties(row);
+    background-color: $bgcolor;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    &__nav{
+        @include flex-properties(row);
+        height: 65%;
+        width: 65%;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__navlink{
+        color: $textcolor;
+        font-size: 3.5rem;
+        &:hover{
+            opacity: 0.4;
+        }
+        
+    }
+    &__active{
+        opacity: 0.4;
+    }
+    &__user{
+        @include flex-properties(row);
+        width: 35%;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__userName{
+        @include flex-properties(row);
+        color: $textcolor;
+        font-size: 2.5rem; 
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+    &__userBtn{
+        @extend .header__userName;
+        cursor: pointer;
+    }
+    &__icon{
+        margin-left: 1rem;
+    }
+}
+

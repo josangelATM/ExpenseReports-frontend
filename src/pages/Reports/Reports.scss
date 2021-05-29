@@ -1,0 +1,11 @@
+@import '../../../public/CSS/mixins.scss';
+
+.reports{
+    @include flex-properties(column);
+    &__title{
+        font-size:4rem;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+}
