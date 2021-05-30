@@ -29,7 +29,12 @@ const Login = () => {
         })
         .catch(err=>{
             setStatus('FAIL')
-            alert(err)
+            if(err.response.data=='Unauthorized'){
+                alert('Usuario o contraseña incorrecta')
+            }else{
+                alert(err.response.data)
+            }
+            
         })
     }
 
