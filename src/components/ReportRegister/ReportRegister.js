@@ -156,7 +156,7 @@ const ReportRegister = () => {
                                     <Field className ='input input__report input__report--small'type='number' name='totalItem' id='totalItem'/>
                                 </div> 
                             </div>
-                            <button type={'button'} className='button--normal reportRegister__addButton' onClick={() => addItemRedux(values)} >Agregar</button>
+                            <button disabled={!(values.date != '' && values.accountName != '' && values.description != '' && values.totalItem != '')} type={'button'} className='button--normal reportRegister__addButton' onClick={() => addItemRedux(values)} >Agregar</button>
                             <ItemsTable/>
                         </div>
 
@@ -169,6 +169,7 @@ const ReportRegister = () => {
                             <label htmlFor='approvedBy'>Aprobado por</label>
                             <Field className ='input input__report input__report--medium'type='text' name='approvedBy' id='approvedBy'/>
                         </div> 
+                        {console.log(errors)}
                         <button type='submit' className='button--normal' disabled={!dirty || !isValid}>Registrar</button>
                     </Form>
                 )}

@@ -5,6 +5,7 @@ import * as Yup from 'yup'
 import ReportTables from '../../components/ReportsTable/ReportsTable'
 import './Search.scss'
 import Loader from '../../components/UI/Loader/Loader';
+import Error from '../Error/Error';
 const validationSchema = Yup.object({
     query: Yup.string().required(),
     field: Yup.string()
@@ -40,7 +41,7 @@ const Search = () =>{
             break;
         case 'FAIL':
         default:
-            searchResult= <div>Hubo un error, intentelo más tarde</div>
+            searchResult= <Error/>
             break;
         
     }
@@ -57,7 +58,7 @@ const Search = () =>{
             >
                 {({dirty, isValid, values,handleChange}) =>(
                     <Form className='search__form'>
-                       <Field type='text' name='query' placeholder='Concepto' className='input login__input search__input'/>
+                       <Field type='text' name='query' placeholder='Concepto/Empleado/Posición...' className='input login__input search__input'/>
                        <select name='field' onChange={handleChange} value={values.field} className='input login__input'>  
                             <option value='concept'selected>Concepto</option>
                             <option value='employeeName'>Nombre de Empleado</option>

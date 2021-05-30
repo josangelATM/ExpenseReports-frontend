@@ -9,6 +9,7 @@ import Reports from './pages/Reports/Reports'
 import Report from './pages/Report/Report';
 import Search from './pages/Search/Search';
 import { useSelector } from 'react-redux';
+import NotFound from './pages/NotFound/NotFound';
 function App() {
   const isLogged = useSelector(state => state.auth.isLogged)
   return (  
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path='/reports/:ID'>
             { isLogged ? <Report/> : <Redirect to='/login'/> } 
+          </Route>
+          <Route>
+              <NotFound/>
           </Route>
         </Switch>
       </main>

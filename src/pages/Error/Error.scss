@@ -1,0 +1,7 @@
+@import '../../../public/CSS/mixins.scss';
+
+.error{
+    @include flex-properties(column);
+    align-items: center;
+    font-size: 2rem;
+}
