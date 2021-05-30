@@ -23,7 +23,7 @@ const Register = () => {
             alert(res.data)
             setStatus('SUCCESS')
         }).catch(err =>{
-            alert(err)
+            alert(err.response.data)
             setStatus('FAIL')
         })
     }

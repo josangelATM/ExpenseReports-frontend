@@ -71,6 +71,7 @@ const Report = (props) =>{
         data.dateFrom = dateToObject(data.dateFrom)
         axios.patch(`/reports/${ID}`,data)
         .then(res=>{
+            setStatus('UPDATED')
             alert(res.data)
         }).catch(err=>{
             alert(err)
@@ -112,7 +113,12 @@ const Report = (props) =>{
                 <div className='reportRegister'>
         <h1 className='reportRegister__title'>{`REPORTE DE GASTO #${report._id}`}</h1>
         <Formik
-            initialValues={report}
+            initialValues={{...report,
+                date:'',
+                accountName:'',
+                description:'',
+                totalItem:''
+            }}
             enableReinitialize={true}
             validationSchema={validationSchema}
             onSubmit={(values) =>{
@@ -209,6 +215,7 @@ const Report = (props) =>{
         </Formik>
     </div>
             )
+        case 'UPDATED':
         case 'DELETED':
             return(
                 <Redirect to='/reports/index'/>
