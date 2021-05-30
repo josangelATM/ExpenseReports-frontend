@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ReportTables from '../../components/ReportsTable/ReportsTable'
 import './Reports.scss'
 import Loader from '../../components/UI/Loader/Loader'
+import Error from '../Error/Error'
 const Reports = () =>{
     const [reports,setReports] = useState([])
     const [status,setStatus] = useState('LOADING')
@@ -39,7 +40,7 @@ const Reports = () =>{
             )
         case 'FAIL':
         default:
-            <div>Hubo un error, intentelo más tarde</div>
+            <Error/>
     }
 }
 

@@ -10,9 +10,14 @@ import { v4 as uuidv4 } from 'uuid';
 import { dateToObject, formatDateToInitialValues,checkDatesValidity } from '../../helpers/helpers';
 import './Report.scss'
 import Loader from '../../components/UI/Loader/Loader';
+import Error from '../Error/Error';
 const validationSchema = Yup.object({
     concept: Yup.string().required(),
     dateFrom: Yup.date().required(),
+    date: Yup.date(),
+    accountName: Yup.string(),
+    description: Yup.string(),
+    totalItem: Yup.string(),
     dateTo: Yup.date().required(),
     employeeName: Yup.string().required(''),
     employeePosition: Yup.string().required(''),
@@ -42,7 +47,7 @@ const Report = (props) =>{
             }))   
             setStatus('SUCCESS')         
         }).catch(err=>{
-            alert(err)
+            alert(err.response.data)
             setStatus('FAIL')
         })
     }
@@ -173,10 +178,10 @@ const Report = (props) =>{
                             </div> 
                             <div className='reportRegister__input-container'>
                                 <label htmlFor='totalItem'>Total</label>
-                                <Field className ='input input__report input__report--small'type='text' name='totalItem' id='totalItem'/>
+                                <Field className ='input input__report input__report--small'type='number' name='totalItem' id='totalItem'/>
                             </div> 
                         </div>
-                        <button type={'button'} className='button--normal reportRegister__addButton' onClick={() => addItemRedux(values)} >Agregar</button>
+                        <button disabled={!(values.date != '' && values.accountName != '' && values.description != '' && values.totalItem != '')} type={'button'} className='button--normal reportRegister__addButton' onClick={() => addItemRedux(values)} >Agregar</button>
                         
                         <ItemsTable/>
                     </div>
@@ -211,7 +216,7 @@ const Report = (props) =>{
         case 'FAIL':
         default:
             return(
-                <div>Hubo un error intentalo más tarde</div>
+                <Error/>
             )
     }
 }

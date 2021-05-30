@@ -7,6 +7,7 @@ import { Redirect } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { login } from '../../store/actions/index'
 import Loader from '../UI/Loader/Loader';
+import Error from '../../pages/Error/Error'
 const validationSchema = Yup.object({
     username: Yup.string().required(),
     password: Yup.string().required()
@@ -67,7 +68,7 @@ const Login = () => {
             )
         default: 
             return(
-                <div>Hubo un error, intentelo más tarde</div>
+                <Error/>
             )
     }
 }
