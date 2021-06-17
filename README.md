@@ -1,5 +1,5 @@
 ﻿# Acerca del proyecto
-Este repositorio contiene el código frontend de una web con las funcionalidades CRUD para reportes de gastos de una empresa, para ver el código backend visitar este [repositorio.](https://github.com/josangelATM/ExpensesReport-backend)
+This repository contains the frontend code of a website with CRUD functionalities for company expense reports, to see the backend code visit this[repo.](https://github.com/josangelATM/ExpensesReport-backend)
 # Endpoints 
  - /login
  - /register
